@@ -5,10 +5,14 @@ var app = new Vue({
         list: ['apple', 'banana', 'strawberry'],
         scroll: 0,
         count: 0,
-        isChild: true,
-        isActive: true,
-        textColor: 'red',
-        bgColor: 'lightgray'
+        classObject: {
+            child: true,
+            'is-active': true
+        },
+        styleObject: {
+            color: 'red',
+            backgroundColor: 'lightgray'
+        }
     },
     methods: {
         increment: function() {
