@@ -13,7 +13,13 @@ var app = new Vue({
             color: 'red',
             backgroundColor: 'lightgray'
         },
-        radius: 50
+        radius: 50,
+        ok: false,
+        monsters: [
+            {id: 1, name: 'スライム', hp: 100},
+            {id: 2, name: 'ゴブリン', hp: 300},
+            {id: 3, name: 'ドラゴン', hp: 500}
+        ]
     },
     methods: {
         increment: function() {
