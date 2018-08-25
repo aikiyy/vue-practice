@@ -11,6 +11,10 @@
         <ol>
             <li v-for="item in list">{{ item }}</li>
         </ol>
+
+        <p>{{ count }}回クリックされた</p>
+        <button v-on:click="increment">カウントを増やす</button>
+
         <!-- DOMのscrollTopプロバティにバインド -->
         <div v-bind:scroll-top.prop="scroll"></div>
         <!-- 現在のデータ全体をjson形式で描画 -->
