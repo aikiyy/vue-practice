@@ -15,6 +15,9 @@
         <p>{{ count }}回クリックされた</p>
         <button v-on:click="increment">カウントを増やす</button>
 
+        <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+        <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p>
+
         <!-- DOMのscrollTopプロバティにバインド -->
         <div v-bind:scroll-top.prop="scroll"></div>
         <!-- 現在のデータ全体をjson形式で描画 -->

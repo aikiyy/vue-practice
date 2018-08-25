@@ -4,7 +4,11 @@ var app = new Vue({
         message: 'Hello Vue.js!',
         list: ['apple', 'banana', 'strawberry'],
         scroll: 0,
-        count: 0
+        count: 0,
+        isChild: true,
+        isActive: true,
+        textColor: 'red',
+        bgColor: 'lightgray'
     },
     methods: {
         increment: function() {
