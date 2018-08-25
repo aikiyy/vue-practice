@@ -19,11 +19,26 @@ var app = new Vue({
             {id: 1, name: 'スライム', hp: 100},
             {id: 2, name: 'ゴブリン', hp: 300},
             {id: 3, name: 'ドラゴン', hp: 500}
-        ]
+        ],
+        name: 'キマイラ'
     },
     methods: {
         increment: function() {
             this.count += 1
+        },
+        doAdd: function () {
+            //リスト内で一番大きいIDを取得
+            var max = this.monsters.reduce(function(a, b) {
+                return a > b.id ? a : b.id
+            }, 0)
+            this.monsters.push({
+                id: max + 1,
+                name: this.name,
+                hp: 200
+            })
+        },
+        doRemove: function(index) {
+            this.monsters.splice(index, 1)
         }
     },
     mounted: function() {
