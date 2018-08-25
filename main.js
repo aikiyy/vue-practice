@@ -39,6 +39,9 @@ var app = new Vue({
         },
         doRemove: function(index) {
             this.monsters.splice(index, 1)
+        },
+        doAttack: function (index) {
+            this.monsters[index].hp -= 10
         }
     },
     mounted: function() {
