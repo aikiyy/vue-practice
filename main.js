@@ -43,5 +43,12 @@ var app = new Vue({
     },
     mounted: function() {
         this.scroll = 100 // 要素のスクロール量を操作
+    },
+    created: function () {
+        this.monsters.forEach(function (item) {
+            this.$set(item, 'active', false)
+        }, this)
     }
+
+
 })
