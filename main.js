@@ -46,6 +46,7 @@ var app = new Vue({
     },
     mounted: function() {
         this.scroll = 100 // 要素のスクロール量を操作
+        console.log(this.$el);
     },
     created: function () {
         this.monsters.forEach(function (item) {
