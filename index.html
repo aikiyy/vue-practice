@@ -14,6 +14,7 @@
 
         <p>{{ count }}回クリックされた</p>
         <button v-on:click="increment">カウントを増やす</button>
+        <button v-on:click="count++">クリック</button>
 
         <p v-if="ok" v-bind:class="classObject">Text</p>
         <p v-bind:style="styleObject">Text</p>
