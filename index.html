@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Vuew.js App</title>
-    <!-- <link href="main.css" rel="stylesheet"> -->
+    <link href="main.css" rel="stylesheet">
 </head>
 <body>
     <div id = "app">
@@ -37,6 +37,8 @@
             <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink" />
         </svg>
         <input type="range" min="0" max="100" v-model="radius">
+
+        <img src="img.jpg" v-on:load="show=true" v-bind:class="{hide: !show}" width="30%" height="30%">
 
         <!-- DOMのscrollTopプロバティにバインド -->
         <div v-bind:scroll-top.prop="scroll"></div>
