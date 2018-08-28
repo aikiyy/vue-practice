@@ -17,7 +17,11 @@
         <button v-on:click="count++">クリック</button>
 
         <!-- <input v-bind:value="message" v-on:input="handleInput"> -->
-        <input v-model="message">
+        <ul>
+            <li><input v-model="message"></li>
+            <li><textarea v-model="message"></textarea></li>
+        </ul>
+
 
         <p v-if="ok" v-bind:class="classObject">Text</p>
         <p v-bind:style="styleObject">Text</p>
