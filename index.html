@@ -48,6 +48,13 @@
         </svg>
         <input type="range" min="0" max="100" v-model="radius">
 
+        <div>
+            <label><input type="radio" value="a" v-model="val">A</label>
+            <label><input type="radio" value="b" v-model="val">B</label>
+            <label><input type="radio" value="c" v-model="val">C</label>
+            <p>{{ val }}</p>
+        </div>
+
         <img src="img.jpg" v-on:load="show=true" v-bind:class="{hide: !show}" width="30%" height="30%">
 
         <!-- DOMのscrollTopプロバティにバインド -->

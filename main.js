@@ -20,7 +20,8 @@ var app = new Vue({
             {id: 2, name: 'ゴブリン', hp: 300},
             {id: 3, name: 'ドラゴン', hp: 500}
         ],
-        name: 'キマイラ'
+        name: 'キマイラ',
+        val: ''
     },
     methods: {
         increment: function() {
