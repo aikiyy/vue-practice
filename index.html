@@ -55,6 +55,15 @@
             <p>{{ val }}</p>
         </div>
 
+        <div>
+            <select v-model="val" multiple>
+                <option disabled="disabled">選択してください</option>
+                <option value="a">A</option>
+                <option value="b">B</option>
+                <option value="c">C</option>
+            </select>
+        </div>
+
         <img src="img.jpg" v-on:load="show=true" v-bind:class="{hide: !show}" width="30%" height="30%">
 
         <!-- DOMのscrollTopプロバティにバインド -->
