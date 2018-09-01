@@ -21,7 +21,9 @@ var app = new Vue({
             {id: 3, name: 'ドラゴン', hp: 500}
         ],
         name: 'キマイラ',
-        val: ''
+        val: '',
+        budget: 300,
+        limit: 1
     },
     methods: {
         increment: function() {
@@ -53,7 +55,15 @@ var app = new Vue({
         this.monsters.forEach(function (item) {
             this.$set(item, 'active', false)
         }, this)
+    },
+    computed: {
+        matched: function () {
+            return this.monsters.filter(function (el) {
+                return el.hp <= this.budget
+            }, this)
+        },
+        limited: function () {
+            return this.matched.slice(0, this.limit)
+        }
     }
-
-
 })

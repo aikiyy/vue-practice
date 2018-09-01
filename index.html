@@ -43,6 +43,17 @@
             </li>
         </ul>
 
+        <div>
+            <input v-model.number="budget">円以下に絞り込む
+            <input v-model.number="limit">件を表示
+            <p>{{ matched.length }}件中{{ limited.length }}件を表示中</p>
+            <ul>
+                <li v-for="item in limited" v-bind:key="item.id">
+                    {{ item.name }} {{ item.hp }}円
+                </li>
+            </ul>
+        </div>
+
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink" />
         </svg>
