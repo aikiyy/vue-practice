@@ -46,6 +46,7 @@
         <div>
             <input v-model.number="budget">円以下に絞り込む
             <input v-model.number="limit">件を表示
+            <button v-on:click="order!=order">切り替え</button>
             <p>{{ matched.length }}件中{{ limited.length }}件を表示中</p>
             <ul>
                 <li v-for="item in limited" v-bind:key="item.id">
@@ -84,6 +85,7 @@
         <!-- この#appの内側にテンプレートを書き込んでいく -->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

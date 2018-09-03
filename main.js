@@ -23,7 +23,8 @@ var app = new Vue({
         name: 'キマイラ',
         val: '',
         budget: 300,
-        limit: 1
+        limit: 1,
+        order: false
     },
     methods: {
         increment: function() {
@@ -62,8 +63,11 @@ var app = new Vue({
                 return el.hp <= this.budget
             }, this)
         },
+        sorted: function () {
+            return _.orderBy(this.matched, 'hp', this.order ? 'desc' : 'asc')
+        },
         limited: function () {
-            return this.matched.slice(0, this.limit)
+            return this.sorted.slice(0, this.limit)
         }
     }
 })
