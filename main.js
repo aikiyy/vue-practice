@@ -24,7 +24,13 @@ var app = new Vue({
         val: '',
         budget: 300,
         limit: 1,
-        order: false
+        order: false,
+        list2: [],
+        current: '',
+        topics: [
+            {value: 'vue', name: 'Vue.js'},
+            {value: 'jQuery', name: 'jQuery'}
+        ]
     },
     methods: {
         increment: function() {
@@ -68,6 +74,16 @@ var app = new Vue({
         },
         limited: function () {
             return this.sorted.slice(0, this.limit)
+        }
+    },
+    watch: {
+        current: function(val) {
+            // GuthubのAPIからトピックのリポジトリを検索
+            axios.get('https://api.github.com/search/repositories', {
+                params: {q: 'topic:' + val}
+            }).then(function(response) {
+                this.list2 = response.data.items
+            }.bind(this))
         }
     }
 })
