@@ -9,7 +9,8 @@
     <div id = "app">
         <p>{{ message }}</p>
         <ol>
-            <li v-for="item in list">{{ item }}</li>
+            <comp-child v-for="name in list"></comp-child>
+            <!--<li v-for="item in list">{{ item }}</li>-->
         </ol>
 
         <p>{{ count }}回クリックされた</p>
@@ -97,5 +98,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="main.js"></script>
+    <script src="component.js"></script>
 </body>
 </html>
