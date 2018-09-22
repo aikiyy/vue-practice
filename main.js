@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue.js!',
+        message: 'Hello! vue.js!',
         list: ['apple', 'banana', 'strawberry'],
         scroll: 0,
         count: 0,
@@ -30,7 +30,8 @@ var app = new Vue({
         topics: [
             {value: 'vue', name: 'Vue.js'},
             {value: 'jQuery', name: 'jQuery'}
-        ]
+        ],
+        show: false
     },
     methods: {
         increment: function() {

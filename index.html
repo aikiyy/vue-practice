@@ -7,17 +7,19 @@
 </head>
 <body>
     <div id = "app">
-        <p>{{ message }}</p>
+        <button v-on:click="show=!show">切り替え</button>
+        <transition>
+            <div v-show="show">トランジションさせたい要素</div>
+        </transition>
+
         <ol>
             <comp-child v-for="name in list"></comp-child>
-            <!--<li v-for="item in list">{{ item }}</li>-->
         </ol>
 
         <p>{{ count }}回クリックされた</p>
         <button v-on:click="increment">カウントを増やす</button>
         <button v-on:click="count++">クリック</button>
 
-        <!-- <input v-bind:value="message" v-on:input="handleInput"> -->
         <ul>
             <li><input v-model="message"></li>
             <li><textarea v-model="message"></textarea></li>

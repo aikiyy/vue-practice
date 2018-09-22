@@ -5,3 +5,14 @@ img {
 img.hide {
     opacity: 0;
 }
+.v-enter-active, .v-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+.v-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+.v-leave {
+    opacity: 0;
+    transform: translateY(10px);
+}
