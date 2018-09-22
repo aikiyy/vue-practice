@@ -12,9 +12,10 @@
             <div v-show="show">トランジションさせたい要素</div>
         </transition>
 
-        <ol>
-            <comp-child v-for="name in list"></comp-child>
-        </ol>
+        <button v-on:click="order=!order">sort</button>
+        <transition-group tag="ul" class="list">
+            <comp-child v-for="item in sortedList" v-bind:name="item.name" v-bind:key="item.id" v-bind:price="item.price"></comp-child>
+        </transition-group>
 
         <p>{{ count }}回クリックされた</p>
         <button v-on:click="increment">カウントを増やす</button>

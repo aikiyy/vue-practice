@@ -1,4 +1,4 @@
 Vue.component('comp-child', {
-    template: '<li>{{ name }}</li>',
-    props: ['name']
+    template: '<li>{{ name }} {{ price }}円</li>',
+    props: ['name', 'price']
 })

@@ -2,7 +2,12 @@ var app = new Vue({
     el: '#app',
     data: {
         message: 'Hello! vue.js!',
-        list: ['apple', 'banana', 'strawberry'],
+        list: [
+            { id: 1, name: 'apple', price: 100},
+            { id: 2, name: 'banana', price: 200},
+            { id: 3, name: 'strawberry', price: 300}
+        ],
+        order: false,
         scroll: 0,
         count: 0,
         classObject: {
@@ -75,6 +80,9 @@ var app = new Vue({
         },
         limited: function () {
             return this.sorted.slice(0, this.limit)
+        },
+        sortedList: function() {
+            return _.orderBy(this.list, 'price', this.order ? 'desc': 'asc')
         }
     },
     watch: {

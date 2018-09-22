@@ -16,3 +16,6 @@ img.hide {
     opacity: 0;
     transform: translateY(10px);
 }
+.v-move {
+    transition: transform 1s;
+}
