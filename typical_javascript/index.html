@@ -14,6 +14,7 @@
           document.write('<p>' + i + '</p>')
         }
 
+        // constructer
         var Member = function (firstName, lastName) {
           this.firstName = firstName;
           this.lastName = lastName;
@@ -23,6 +24,24 @@
         }
         var member = new Member('太郎', '山田');
         document.write(member.getFullname())
+
+        // superclass, subclass
+        var Animal = function () {};
+        Animal.prototype = {
+          walk: function () {
+            document.write('トコトコ');
+          }
+        }
+        var Dog = function () {
+          Animal.call(this)
+        }
+        Dog.prototype = new Animal();
+        Dog.prototype.bark = function () {
+          document.write('わんわん')
+        }
+        var d = new Dog();
+        d.walk();
+        d.bark();
     </script>
     <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
 </body>
