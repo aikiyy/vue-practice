@@ -6,6 +6,8 @@
 </head>
 <body>
     <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
+    <input type="button" value="ダイアログ表示" onclick="btn_click()" />
+    <input id="btn" type="button" value="ダイアログ表示2" />
     現在時刻<span id="result"></span>
 
     <form>
@@ -17,6 +19,7 @@
         </select>
         <input type="submit" value="送信"></input>
     </form>
+
     <script type="text/javascript">
         let name = 'World'
         let msg = `Hello, ${name}!!`
@@ -67,6 +70,22 @@
             console.log(opt.value);
           }
         }
+
+        function btn_click() {
+          window.alert('ボタンがクリックされました');
+        }
+
+        window.onload = function () {
+          document.getElementById('btn').onclick = function () {
+            window.alert('ボタンがクリックされました2');
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('btn').addEventListener('click', function () {
+            window.alert('ボタンがクリックされました(eventlistener)');
+          }, false);
+        }, false);
     </script>
 </body>
 </html>
