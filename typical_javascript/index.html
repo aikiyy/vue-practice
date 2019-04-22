@@ -7,6 +7,16 @@
 <body>
     <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
     現在時刻<span id="result"></span>
+
+    <form>
+        <label for="food">好きな食べ物は？</label>
+        <select id="food">
+            <option value="ラーメン">ラーメン</option>
+            <option value="餃子">餃子</option>
+            <option value="焼肉">焼肉</option>
+        </select>
+        <input type="submit" value="送信"></input>
+    </form>
     <script type="text/javascript">
         let name = 'World'
         let msg = `Hello, ${name}!!`
@@ -48,6 +58,15 @@
         var current = new Date();
         var result = document.getElementById('result');
         result.textContent = current.toLocaleString();
+
+        var s = document.getElementById('food');
+        var opts = s.childNodes;
+        for (var i = 0, len = opts.length; i < len; i++) {
+          var opt = opts.item(i);
+          if (opt.nodeType === 1) {
+            console.log(opt.value);
+          }
+        }
     </script>
 </body>
 </html>
