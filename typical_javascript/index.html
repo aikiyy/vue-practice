@@ -5,6 +5,8 @@
     <title>JavaScript本格入門</title>
 </head>
 <body>
+    <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
+    現在時刻<span id="result"></span>
     <script type="text/javascript">
         let name = 'World'
         let msg = `Hello, ${name}!!`
@@ -42,7 +44,10 @@
         var d = new Dog();
         d.walk();
         d.bark();
+
+        var current = new Date();
+        var result = document.getElementById('result');
+        result.textContent = current.toLocaleString();
     </script>
-    <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
 </body>
 </html>
