@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript本格入門</title>
+</head>
+<body>
+    <a href="JavaScript:window.alert(msg);">ダイアログを表示</a>
+    <input type="button" value="ダイアログ表示" onclick="btn_click()" />
+    <input id="btn" type="button" value="ダイアログ表示2" />
+    現在時刻<span id="result"></span>
+
+    <form>
+        <label for="food">好きな食べ物は？</label>
+        <select id="food">
+            <option value="ラーメン">ラーメン</option>
+            <option value="餃子">餃子</option>
+            <option value="焼肉">焼肉</option>
+        </select>
+        <input type="submit" value="送信"></input>
+    </form>
+
+    <script type="text/javascript">
+        let name = 'World'
+        let msg = `Hello, ${name}!!`
+        window.alert(msg);
+
+        for (var i = 1; i < 10; i++) {
+          document.write('<p>' + i + '</p>')
+        }
+
+        // constructer
+        var Member = function (firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.getFullname = function () {
+            return this.lastName + ' ' + this.firstName;
+          }
+        }
+        var member = new Member('太郎', '山田');
+        document.write(member.getFullname())
+
+        // superclass, subclass
+        var Animal = function () {};
+        Animal.prototype = {
+          walk: function () {
+            document.write('トコトコ');
+          }
+        }
+        var Dog = function () {
+          Animal.call(this)
+        }
+        Dog.prototype = new Animal();
+        Dog.prototype.bark = function () {
+          document.write('わんわん')
+        }
+        var d = new Dog();
+        d.walk();
+        d.bark();
+
+        var current = new Date();
+        var result = document.getElementById('result');
+        result.textContent = current.toLocaleString();
+
+        var s = document.getElementById('food');
+        var opts = s.childNodes;
+        for (var i = 0, len = opts.length; i < len; i++) {
+          var opt = opts.item(i);
+          if (opt.nodeType === 1) {
+            console.log(opt.value);
+          }
+        }
+
+        function btn_click() {
+          window.alert('ボタンがクリックされました');
+        }
+
+        window.onload = function () {
+          document.getElementById('btn').onclick = function () {
+            window.alert('ボタンがクリックされました2');
+          }
+        };
+
+        document.addEventListener('DOMContentLoaded', function () {
+          document.getElementById('btn').addEventListener('click', function () {
+            window.alert('ボタンがクリックされました(eventlistener)');
+          }, false);
+        }, false);
+    </script>
+</body>
+</html>
